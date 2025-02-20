@@ -1,33 +1,37 @@
-import "bootstrap";
-import "./style.css";
+// import "bootstrap";
+// import "./style.css";
 
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+// import "./assets/img/rigo-baby.jpg";
+// import "./assets/img/4geeks.ico";
 
-window.onload = function() {
+// window.onload = function() {
 
-  console.log("Hello Rigo from the console!");
- };
+//   console.log("Hello Rigo from the console!");
+//  };
 
 
-function domainGenerator(){
+function domainGenerator() {
     let pronouns = ['the', 'our'];
 
     let adjs = ['great', 'big'];
-    
+
     let nouns = ['jogger', 'racoon'];
+
+    let extensions = ['.com', '.net', '.io', '.app'];
 
     let domainName = []
 
-    for(let i = 0 ; i< pronouns.length ; i++){
-        for (let j = 0 ; j < adjs.length ; j++){
-            for (let k = 0 ; k < nouns.length ; k++){
-               domainName.push(pronouns[i] + adjs[j] + nouns[k]+ ".com") 
+    for (let pronoun of pronouns) {
+        for (let adj of adjs) {
+            for (let noun of nouns) {
+                for (let extension of extensions) {
+                    domainName.push(pronoun + adj + noun + extension)
+                }
             }
         }
     }
-return domainName;
+    return domainName;
 }
 
 console.log(domainGenerator())
